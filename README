@@ -1,0 +1,22 @@
+Programowanie(L) - zadanie programistyczne nr 2 - Filip Pacanowski
+
+LEKSER I PARSER
+Te fragmenty projektu są napisane raczej standardowo.
+
+INTERPRETER
+Technika interpretowania inspirowana jest artykułem:
+http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.41.6742&rep=rep1&type=ps
+W skrócie: każdą klauzulę tłumaczę na prologowy predykat, który określa pojedynczy krok redukcji.
+Dzięki temu prolog sam dopasowuje odpowiednią głowę i wykonuje podstawienia.
+Z deklaracjami lokalnymi radzę sobie liftując je na globalny poziom.
+
+TESTY
+Stosuję testy unitowe z SWI-Prologa. Każdy plik opatrzyłem zestawem testów.
+Wszystkie testy można odpalić poleceniem:
+swipl -l interpreter.pl -t run_tests.
+Testy te są jednocześnie prezentacją możliwości interpretera.
+
+OGRANICZENIA I ZNANE BŁĘDY
+Jedynym ograniczeniem w stosunku do oryginalnego języka, jest to że zabraniam zagnieżdżania konstruktorów we
+wzorcu(np. funkcja even nie działa).
+Niewykryty błąd powoduje pętlenie się interpretera przy próbie obliczenia więcej niż 2 liczb pierwszych zgodnie z definicją z opisu zadania.

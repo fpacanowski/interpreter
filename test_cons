@@ -1,0 +1,15 @@
+-- Listy zbudowane za konstruktorów Cons/2 i Nil/0
+
+reverse = rev Nil where { rev a Nil = a; rev a (Cons x xs) = rev (Cons x a) xs; }
+
+length = len 0 where { len n Nil = n; len n (Cons x xs) = len (n+1) xs; }
+
+append Nil ys = ys;
+append (Cons x xs) ys = Cons x (append xs ys);
+
+even Nil = True;
+even (Cons x Nil) = False;
+even (Cons x (Cons y ys)) = even ys;
+
+head (Cons x xs) = x;
+tail (Cons x xs) = xs;
